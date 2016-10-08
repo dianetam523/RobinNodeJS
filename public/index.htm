@@ -1,9 +1,34 @@
 <html>
    <head>
       <title>Sample Page</title>
+       <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link type="text/css" src="/public/css/index.css">
+       <link rel="stylesheet" src="/public/css/foundation.css">
    </head>
    
    <body>
-      Hello World! HERE'S AN INDEX PAGE WOOOOOFKJDAHGKJ AFGKH
+        <div class="callout">
+            <div class="large-12 text-center">
+                <h1>Robin API Hacks</h1>
+            </div>
+        </div>
+         
+<!--  Left Column, TODO insert button to call on Robin GET function -->
+    <div class="row">
+        
+            <div class="large-2 column full-height left-color">
+               <!-- insert button code below -->
+                  <button id="attendance" type="button" class="button">See who's present!</button>
+            </div>  
+
+          <div class="callout large-10 columns full-height">
+               <!-- insert template to show json data from diane's code -->
+                <p id="result"></p>
+          </div>
+      
+      </div>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    </body>
 </html>

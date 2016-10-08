@@ -22,12 +22,19 @@ var server = app.listen(8081, function () {
    console.log("Example app listening at http://%s:%s", host, port)
 })
 
-
 app.get('/presence', function(req, res) {
 var peoplePresent = [];
+    //TODO catch error when no one in vicinity
 robin.api.spaces.presence.get(16008).then(function (response) {
   peoplePresent = response.getData();
   res.json(peoplePresent);
-  console.log(peoplePresent[0].space_id);
+    if(peoplePresent[0] != null){
+        console.log(peoplePresent[0].space_id);      
+    }
+  
   });
 });
+
+
+
+
