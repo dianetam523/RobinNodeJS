@@ -1,0 +1,10 @@
+{
+  "name": "hackumass",
+  "description": "dfghj",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^3.21.2",
+    "robin-js-sdk": "^0.5.1",
+    "faye": "1.0.1"
+  }
+}
