@@ -1,8 +1,8 @@
 $(document).ready(function(){
-
     $("#attendance").click(function(){
         var TEXT = $.get('/presence').then(function(response){
             var i;
+            $("#result").html("");
             for( i = 0; i < response.length; i++){
                 var person = response[i];
                 console.log(response[i]);
