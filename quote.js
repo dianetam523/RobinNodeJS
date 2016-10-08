@@ -29,7 +29,7 @@ robin.api.spaces.presence.get(16008).then(function (response) {
   peoplePresent = response.getData();
   res.json(peoplePresent);
     if(peoplePresent[0] != null){
-        console.log(peoplePresent[0].space_id);      
+        console.log(peoplePresent[0].space_id);    
     }
   
   });
