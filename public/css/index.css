@@ -1,9 +1,9 @@
 body {
-  padding-top: 60px;
+  padding-top: 70px;
 }
 
 .navbar {
-  background-color: #000 !important;
+  background-color: #fff !important;
 }
 
 .navbar-transparent button {
@@ -44,9 +44,9 @@ body {
 }
 
 .navbar-post button{ 
-  background-color:#000; 
+  background-color:#fff; 
   border: none; 
-  color: #fff;
+  color: #000;
 } 
 
 .attendance button{
