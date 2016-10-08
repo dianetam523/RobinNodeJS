@@ -1,20 +1,29 @@
-
-var Robin = require('robin-js-sdk');
 var express = require('express');
+var Robin = require('robin-js-sdk');
+
 var robin = new Robin('OukU3HqR6O3yPPfEpQbN76lsqhCAZ9B0A7DgbyV9hWpU98evUyy8LPFvfHXr0suMdZbwp0neSPQPE6DK0K03ZN2D0ifvWJuR6oAIeBlIjC6HgUK4B1Mt3AUtkS9AJRko');
 var app = express();
 
-var quotes = [
-  { author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!"},
-  { author : 'Walt Disney', text : "You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you"},
-  { author : 'Unknown', text : "Even the greatest was once a beginner. Don’t be afraid to take that first step."},
-  { author : 'Neale Donald Walsch', text : "You are afraid to die, and you’re afraid to live. What a way to exist."}
-];
-
-
+app.use(express.static('public'));
 app.use(express.bodyParser());
 
 app.get('/', function(req, res) {
+   res.send('Hello World');
+});
+
+// app.get('/index.htm', function(req, res) {
+//    res.sendFile( __dirname + "/" + "index.htm" );
+// });
+
+var server = app.listen(8081, function () {
+   var host = server.address().address
+   var port = server.address().port
+   
+   console.log("Example app listening at http://%s:%s", host, port)
+})
+
+
+app.get('/presence', function(req, res) {
 var peoplePresent = [];
 robin.api.spaces.presence.get(16008).then(function (response) {
   peoplePresent = response.getData();
@@ -22,47 +31,3 @@ robin.api.spaces.presence.get(16008).then(function (response) {
   console.log(peoplePresent[0].space_id);
   });
 });
-
-
-app.get('/quote/random', function(req, res) {
-  var id = Math.floor(Math.random() * quotes.length);
-  var q = quotes[id];
-  res.json(q);
-});
-
-app.get('/quote/:id', function(req, res) {
-  if(quotes.length <= req.params.id || req.params.id < 0) {
-    res.statusCode = 404;
-    return res.send('Error 404: No quote found');
-  }
-
-  var q = quotes[req.params.id];
-  res.json(q);
-});
-
-app.post('/quote', function(req, res) {
-  if(!req.body.hasOwnProperty('author') || !req.body.hasOwnProperty('text')) {
-    res.statusCode = 400;
-    return res.send('Error 400: Post syntax incorrect.');
-  }
-
-  var newQuote = {
-    author : req.body.author,
-    text : req.body.text
-  };
-
-  quotes.push(newQuote);
-  res.json(true);
-});
-
-app.delete('/quote/:id', function(req, res) {
-  if(quotes.length <= req.params.id) {
-    res.statusCode = 404;
-    return res.send('Error 404: No quote found');
-  }
-
-  quotes.splice(req.params.id, 1);
-  res.json(true);
-});
-
-app.listen(process.env.PORT || 3412);
