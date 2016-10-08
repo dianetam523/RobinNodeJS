@@ -2,6 +2,10 @@ body {
   padding-top: 60px;
 }
 
+.navbar {
+  background-color: #000 !important;
+}
+
 .navbar-transparent button {
   background-color: transparent;
   border: none;
@@ -32,21 +36,21 @@ body {
 }
 
 .professor-feed .icon-check-sign {
-  color: #8BE7FF;
+  color: #000;
   /* Sets padding at 2px on all sides at once */
   padding: 2px;
   /* Sets the border radius to 2px for each corner. */
   border-radius: 2px;
 }
 
-.navbar {
-  background-color: #000;
-}
+.navbar-post button{ 
+  background-color:#000; 
+  border: none; 
+  color: #fff;
+} 
 
-.navbar-post button {
-  padding-left: -10px;
-  background-color: #007FF5;
-  border: none;
+.attendance button{
+  background-color: #0099CC;
   color: #fff;
 }
 
