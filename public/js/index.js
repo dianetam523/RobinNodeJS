@@ -14,12 +14,7 @@ $(document).ready(function(){
                 //data check
                 console.log(response[i]);
                 console.log(person.user.name);
-<<<<<<< HEAD
-            $("#result").append("<div class='text-left'>"+person.user.name+" ...... "+ person.user.primary_email.email+"</div>");
-                
-=======
             $("#result").append("<div class='text-left'>"+person.user.name+"    "+ person.user.primary_email.email+"</div>");     
->>>>>>> 5466bdb433cbf4c9624dd61fc78a746989b48050
             }
             
         });
