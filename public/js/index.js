@@ -7,7 +7,18 @@ $(document).ready(function(){
         var TEXT = $.get('/presence').then(function(response){
             //clear div with id='result'
             $("#result").html(""); 
-            var i;
+            $("#result").append("<div class='loader'></div>");  
+            setTimeout(function () {
+                // Add to document using html, rather than tmpContainer
+
+            }, 2000); // 0 milliseconds
+            
+            window.setTimeout(function() {
+        // this will execute 2 second later
+                
+                 var i;
+            if(response!=null){
+               $("#result").html(""); 
             for( i = 0; i < response.length; i++){
                 //iterate through each user, append information to div
                 var person = response[i];
@@ -16,7 +27,12 @@ $(document).ready(function(){
                 console.log(person.user.name);
             $("#result").append("<div class='text-left'>"+person.user.name+"    "+ person.user.primary_email.email+"</div>");     
             }
-            
+            }else{
+                 $("#result").html("");
+                $("#result").append("<div class='text-left'>No one is currently here</div>");     
+            }
+            }, 1000);
+           
         });
        
     });
@@ -24,7 +40,6 @@ $(document).ready(function(){
     $('#roomBtn').click(function(){
         var roomNum = $('#roomBtn').val;
         //deliver roomNum value to quotes.js GET function for presence.
-        
     });
 
 });
