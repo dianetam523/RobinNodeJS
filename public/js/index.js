@@ -7,7 +7,7 @@ $(document).ready(function(){
                 var person = response[i];
                 console.log(response[i]);
                 console.log(person.user.name);
-            $("#result").append("<div class='text-left'>"+person.user.name+" ...... "+ person.user.primary_email.email+"</div>");     
+            $("#result").append("<div class='text-left'>"+person.user.name+"    "+ person.user.primary_email.email+"</div>");     
             }
             
         });
