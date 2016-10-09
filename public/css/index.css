@@ -1,9 +1,11 @@
 body {
   padding-top: 70px;
+  background-color: #437F97 !important;
 }
 
 .navbar {
   background-color: #fff !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navbar-transparent button {
@@ -49,17 +51,23 @@ body {
   color: #000;
 } 
 
+.students {
+  padding-top: 20px;
+}
+
 .attendance button{
+  padding-left: 30px;
   background-color: #008CBA;
   color: #fff;
   padding: 10px 24px;
   border-radius: 4px;
   -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+
 }
-.attendance button:hover {
-    background-color: #008CBA; /* Green */
-    color: white;
+.button:hover {
+    background-color: #008CBA !important; /* Green */
+    color: white !important;
 }
 
 .attendance button span {
@@ -78,14 +86,7 @@ body {
   transition: 0.5s;
 }
 
-.button:hover span {
-  padding-right: 25px;
-}
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 
 
 
