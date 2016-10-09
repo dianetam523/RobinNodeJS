@@ -3,7 +3,7 @@ $(document).ready(function(){
     JavaScript, JQuery, Express function to retrieve data from Node.JS server
     */
     $("#attendance").click(function(){
-        
+        var peeps = ["jerry","joe","alex","susie","suze","linh","enaid"];
         var TEXT = $.get('/presence').then(function(response){
             //clear div with id='result'
             $("#result").html(""); 
@@ -25,11 +25,17 @@ $(document).ready(function(){
                 //data check
                 console.log(response[i]);
                 console.log(person.user.name);
-            $("#result").append("<div class='text-left'>"+person.user.name+"    "+ person.user.primary_email.email+"</div>");     
+            $("#result").append($("<div class='text-left'>"+person.user.name+"    "+ person.user.primary_email.email+"</div>").hide().fadeIn(500));     
+            } 
+            
+            for( i = 0; i < peeps.length; i++){
+               
+            $("#result").append($("<div class='text-left'>"+peeps[i]+"</div>").hide().fadeIn(500));   
+             
             }
             }else{
                  $("#result").html("");
-                $("#result").append("<div class='text-left'>No one is currently here</div>");     
+                $("#result").append($("<div class='text-left'>No one is currently here</div>").hide().fadeIn(500));     
             }
             }, 1000);
            

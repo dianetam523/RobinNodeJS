@@ -92,9 +92,11 @@ body {
 }
 
 #result > div {
+
   color: #008CBA;
-  background-color: #fff
-  border: 1px;
+  background-color: #FFF;
+  
+
 }
 
 .students {
@@ -110,6 +112,7 @@ body {
   height: 40px;
   -webkit-animation: spin 1s linear;
   animation: spin 1s linear;
+    
 }
 
 @-webkit-keyframes spin {
