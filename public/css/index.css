@@ -8,6 +8,11 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.professor button {
+  background-color: #008CBA;
+  color: #fff;
+}
+
 .navbar-transparent button {
   background-color: transparent;
   border: none;
@@ -52,7 +57,7 @@ body {
 } 
 
 .students {
-  padding-top: 20px;
+  padding-top: -20px;
 }
 
 .attendance button{
@@ -78,12 +83,22 @@ body {
 }
 
 .button span:after {
-  content: '»';
-  position: absolute;
+  content: '»' !important;
+  position: absolute !important;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.5s;
+}
+
+#result > div {
+  color: #008CBA;
+  background-color: #fff
+  border: 1px;
+}
+
+.students {
+  color: #fff;
 }
 
 
