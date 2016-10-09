@@ -3,7 +3,6 @@ $(document).ready(function(){
     JavaScript, JQuery, Express function to retrieve data from Node.JS server
     */
     $("#attendance").click(function(){
-        var peeps = ["jerry","joe","alex","susie","suze","linh","enaid"];
         var TEXT = $.get('/presence').then(function(response){
             //clear div with id='result'
             $("#result").html(""); 
@@ -15,36 +14,32 @@ $(document).ready(function(){
             
             window.setTimeout(function() {
         // this will execute 2 second later
-                
-                 var i;
-            if(response!=null){
-               $("#result").html(""); 
-            for( i = 0; i < response.length; i++){
+
+        var i;
+        if(response!=null){
+         $("#result").html(""); 
+         for( i = 0; i < response.length; i++){
                 //iterate through each user, append information to div
                 var person = response[i];
-                //data check
+                //data checks
                 console.log(response[i]);
                 console.log(person.user.name);
-            $("#result").append($("<div class='text-left'>"+person.user.name+"    "+ person.user.primary_email.email+"</div>").hide().fadeIn(500));     
+                $("#result").append($("<div class='text-left'>"+person.user.name+"    "+ person.user.primary_email.email+"</div>").hide().fadeIn(500));     
             } 
             
-            for( i = 0; i < peeps.length; i++){
-               
-            $("#result").append($("<div class='text-left'>"+peeps[i]+"</div>").hide().fadeIn(500));   
-             
-            }
-            }else{
-                 $("#result").html("");
-                $("#result").append($("<div class='text-left'>No one is currently here</div>").hide().fadeIn(500));     
-            }
-            }, 1000);
-           
+
+        }else{
+           $("#result").html("");
+           $("#result").append($("<div class='text-left'>No one is currently here</div>").hide().fadeIn(500));     
+       }
+   }, 1000);
+
         });
-       
-    });
-    
-    $('#roomBtn').click(function(){
-        var roomNum = $('#roomBtn').val;
+
+});
+
+$('#roomBtn').click(function(){
+    var roomNum = $('#roomBtn').val;
         //deliver roomNum value to quotes.js GET function for presence.
     });
 
